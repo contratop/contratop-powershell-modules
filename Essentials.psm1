@@ -54,7 +54,7 @@ function Essentials_Store {Write-Host "Contratop PowerShell Store"
 
 
 #AutoUpdater Essentials
-function Essentials-Update {wget https://raw.githubusercontent.com/contratop/contratop-powershell-modules/main/PowerShell_Essentials.psm1 -OutFile 'C:\Program Files\WindowsPowerShell\Modules\Essentials\Essentials.psm1'
+function Essentials-Update {wget https://raw.githubusercontent.com/contratop/contratop-powershell-modules/main/Essentials.psm1 -OutFile 'C:\Program Files\WindowsPowerShell\Modules\Essentials\Essentials.psm1'
                               Write-Host "El paquete de comandos PowerShell Essentials de ContratopDev ha finalizado su actualizacion" -ForegroundColor Green
                               Write-Host ""
                               Write-Host "Reinicia la PowerShell para que los cambios se apliquen correctamente" -ForegroundColor Yellow
