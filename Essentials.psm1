@@ -40,7 +40,14 @@ function Essentials-Forecast {(curl http://wttr.in/badajoz -UserAgent "curl" ).C
 function Edit-Profile {notepad++ $profile}
 
 function Get-IPv4Address {Get-NetIPAddress -AddressFamily IPv4 -InterfaceAlias "Ethernet" | Select-Object IPAddress}
-        
+   
+function Essentials-RestartExplorer {Write-Host "Reinciiando el Windows Explorer. Espere un momentin plis" -ForegroundColor Yellow
+                                        taskkill /f /im explorer.exe
+                                        sleep 1
+                                        explorer.exe
+                                        clear
+                                     Write-Host ""
+                                     Write-Host "El Windows Explorer se ha reiniciado correctamente" -ForegroundColor Green}
 
 function Get-FreeGames {$data = Invoke-RestMethod https://www.gamerpower.com/api/giveaways?platform=pc; $data | Select-Object title,worth,open_giveaway,platforms,type | Export-Csv $HOME\Desktop\Lista_Juegos.csv -force -notypeinformation; echo "la lista de juegos gratis de la semana se ha explortado correctamente en el Escritorio"}
 
@@ -49,11 +56,15 @@ function Get-FreeGames {$data = Invoke-RestMethod https://www.gamerpower.com/api
 function Essentials-Store {Write-Host "Contratop PowerShell Store"
                            Write-Host ""
                            Write-Host "1- PowerToys - ContratopDev" -ForegroundColor Green
+                           Write-Host "2- patata - pokeinalover" -ForegroundColor Green
                            Write-Host ""
                            Write-Host "Use Essentials-Install-ModuleName to perform install"}
 #StoreItems
 function Essentials-Install-PowerToys {wget https://raw.githubusercontent.com/contratop/contratop-powershell-modules/main/Powertoys.psm1 -OutFile 'C:\Program Files\WindowsPowerShell\Modules\Powertoys\Powertoys.psm1'
                                      Write-Host "el modulo PowerToys se ha descargado" -ForegroundColor Green   }
+
+function Essentials-Install-patata {wget https://raw.githubusercontent.com/contratop/contratop-powershell-modules/main/patata.psm1 -OutFile 'C:\Program Files\WindowsPowerShell\Modules\patata\patata.psm1'
+                                    Write-Host "El modulo patata se ha descargado" -ForegroundColor Green}
 
 
 #AutoUpdater Essentials
