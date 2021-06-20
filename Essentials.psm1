@@ -1,9 +1,33 @@
-﻿# PowerShell Essentials
+﻿# Contratop Essentials
 # By ContratopDev
 # All Rights Reserved
+function Essentials-About {Write-Host "Acerca de:"
+                               Write-Host "Modulo       : Contratop Essentials"
+                               Write-Host "Desarrollador: ContratopDev"
+                               Write-Host "Organizacion : New Molecule Global"
+                               Write-Host "             : Contratop Studios"
+                               Write-Host "Notas        : uwu owo ewe awa iwi"}
 
 # Variables
 $MyDesktop = "$home\Desktop"
+
+# Help Page for Essentials
+function Essentials-Help {clear
+                           Write-Host "Mostrando ayuda para el modulo Contratop Essentials"
+                           Write-Host ""
+                           Write-Host "Essentials-Help            : Muestra esta ayuda"
+                           Write-Host "Essentials-About           : Muestra detalles de este modulo"
+                           Write-Host "Essentials-Update          : Actualiza el modulo Contratop Essentials via internet"
+                           Write-Host "Essentials-Store           : Muestra los modulos disponible para descargar de Contratop Store"
+                           Write-Host ""
+                           Write-Host "Essentials-Forecast        : Devuelve el tiempo actual y el tiempo de 3 dias en ASCII"
+                           Write-Host "Essentials-Forecast-minus  : Una version reducida de Essentials-Forecast"
+                           Write-Host "Edit-Profile               : Edita tu perfil privado de PowerShell con Notepad++"
+                           Write-Host "Get-IPv4Address            : ALERTA: Devuelve tu IPv4 Publica" -ForegroundColor Yellow
+                           Write-Host "Get-FreeGames              : Genera un archivo CSV de los juegos de PC actualmente gratis y Giveaways"
+                           }
+
+
 
 
 # Applets
@@ -22,6 +46,12 @@ function Get-FreeGames {$data = Invoke-RestMethod https://www.gamerpower.com/api
 
 
 #Download More Modules
+function Essentials_Store {Write-Host "Contratop PowerShell Store"
+                           Write-Host ""
+                           Write-Host "No hay modulos disponibles de momento" -ForegroundColor Yellow}
+#StoreItems
+
+
 
 #AutoUpdater Essentials
 function Essentials-Update {wget https://raw.githubusercontent.com/contratop/contratop-powershell-modules/main/PowerShell_Essentials.psm1 -OutFile 'C:\Program Files\WindowsPowerShell\Modules\Essentials\Essentials.psm1'
