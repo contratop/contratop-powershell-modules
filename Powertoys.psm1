@@ -23,7 +23,7 @@ function Powertoys-Help {clear
 function Powertoy-list {clear
                            Write-Host "PowerToys List"
                            Write-Host ""
-                           Write-Host "Powertoy_Tetris    : Mini Tetris en PowerShell"
+                           Write-Host "Powertoy-Tetris    : Mini Tetris en PowerShell"
 }
 
 # Update Package
@@ -35,7 +35,7 @@ function Powertoys-Update {wget https://raw.githubusercontent.com/contratop/cont
 
 
 #powertoy_tetris
-function Powertoy_Tetris {$screenWidth = 80
+function Powertoy-Tetris {$screenWidth = 80
 $screenHeight = 30
 $tetrominos = @()
 $fieldWidth = 12
