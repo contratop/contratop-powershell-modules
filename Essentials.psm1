@@ -46,11 +46,14 @@ function Get-FreeGames {$data = Invoke-RestMethod https://www.gamerpower.com/api
 
 
 #Download More Modules
-function Essentials_Store {Write-Host "Contratop PowerShell Store"
+function Essentials-Store {Write-Host "Contratop PowerShell Store"
                            Write-Host ""
-                           Write-Host "No hay modulos disponibles de momento" -ForegroundColor Yellow}
+                           Write-Host "1- PowerToys - ContratopDev" -ForegroundColor Green
+                           Write-Host ""
+                           Write-Host "Use Essentials-Install-ModuleName to perform install"}
 #StoreItems
-
+function Essentials-Install-PowerToys {wget https://raw.githubusercontent.com/contratop/contratop-powershell-modules/main/Powertoys.psm1 -OutFile 'C:\Program Files\WindowsPowerShell\Modules\Powertoys\Powertoys.psm1'
+                                     Write-Host "el modulo PowerToys se ha descargado" -ForegroundColor Green   }
 
 
 #AutoUpdater Essentials

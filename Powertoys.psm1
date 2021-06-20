@@ -20,7 +20,7 @@ function Powertoys-Help {clear
                            Write-Host "Powertoy-List             : Muestra todos los PowerToys disponibles"
                            }
 # PowerToys List
-function Powertoys-list {clear
+function Powertoy-list {clear
                            Write-Host "PowerToys List"
                            Write-Host ""
                            Write-Host "Powertoy_Tetris    : Mini Tetris en PowerShell"
