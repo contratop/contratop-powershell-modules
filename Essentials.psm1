@@ -60,10 +60,12 @@ function Essentials-Store {Write-Host "Contratop PowerShell Store"
                            Write-Host ""
                            Write-Host "Use Essentials-Install-ModuleName to perform install"}
 #StoreItems
-function Essentials-Install-PowerToys {wget https://raw.githubusercontent.com/contratop/contratop-powershell-modules/main/Powertoys.psm1 -OutFile 'C:\Program Files\WindowsPowerShell\Modules\Powertoys\Powertoys.psm1'
+function Essentials-Install-PowerToys {mkdir "C:\Program Files\WindowsPowerShell\Modules\Powertoys"
+                                     wget https://raw.githubusercontent.com/contratop/contratop-powershell-modules/main/Powertoys.psm1 -OutFile 'C:\Program Files\WindowsPowerShell\Modules\Powertoys\Powertoys.psm1'
                                      Write-Host "el modulo PowerToys se ha descargado" -ForegroundColor Green   }
 
-function Essentials-Install-patata {wget https://raw.githubusercontent.com/contratop/contratop-powershell-modules/main/patata.psm1 -OutFile 'C:\Program Files\WindowsPowerShell\Modules\patata\patata.psm1'
+function Essentials-Install-patata {mkdir "C:\Program Files\WindowsPowerShell\Modules\patata"
+                                    wget https://raw.githubusercontent.com/contratop/contratop-powershell-modules/main/patata.psm1 -OutFile 'C:\Program Files\WindowsPowerShell\Modules\patata\patata.psm1'
                                     Write-Host "El modulo patata se ha descargado" -ForegroundColor Green}
 
 
