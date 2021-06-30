@@ -57,12 +57,17 @@ function Essentials-Store {Write-Host "Contratop PowerShell Store"
                            Write-Host ""
                            Write-Host "1- PowerToys - ContratopDev" -ForegroundColor Green
                            Write-Host "2- patata - pokeinalover" -ForegroundColor Green
+                           Write-Host "3- Chocolatey - Chocolatey" -ForegroundColor Cyan
                            Write-Host ""
                            Write-Host "Use Essentials-Install-ModuleName to perform install"}
 #StoreItems
 function Essentials-Install-PowerToys {mkdir "C:\Program Files\WindowsPowerShell\Modules\Powertoys"
                                      wget https://raw.githubusercontent.com/contratop/contratop-powershell-modules/main/Powertoys.psm1 -OutFile 'C:\Program Files\WindowsPowerShell\Modules\Powertoys\Powertoys.psm1'
                                      Write-Host "el modulo PowerToys se ha descargado" -ForegroundColor Green   }
+
+function Essentials_Install-Chocolatey {Write-Host "Descargando e Instalando Chocolatey..." -ForegroundColor Yellow
+                                        Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+                                        Write-Host "La operacion se ha completado" -ForegroundColor Green}
 
 function Essentials-Install-patata {mkdir "C:\Program Files\WindowsPowerShell\Modules\patata"
                                     wget https://raw.githubusercontent.com/contratop/contratop-powershell-modules/main/patata.psm1 -OutFile 'C:\Program Files\WindowsPowerShell\Modules\patata\patata.psm1'
