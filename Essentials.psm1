@@ -28,6 +28,7 @@ function Essentials-Help {clear
                            Write-Host "Edit-Profile               : Edita tu perfil privado de PowerShell con Notepad++"
                            Write-Host "Get-IPv4Address            : ALERTA: Devuelve tu IPv4 Publica" -ForegroundColor Yellow
                            Write-Host "Get-FreeGames              : Genera un archivo CSV de los juegos de PC actualmente gratis y Giveaways"
+                           Write-Host "Get-OnlineContent          : Use Youtube-DL to download content"
                            Write-Host ""
                            Write-Host "Iss-Package                : Descarga un archivo especifico de la red via PowerShell"
                            }
@@ -53,6 +54,58 @@ function Ess-RestartExplorer {Write-Host "Reinciiando el Windows Explorer. Esper
                                         clear
                                      Write-Host ""
                                      Write-Host "El Windows Explorer se ha reiniciado correctamente" -ForegroundColor Green}
+
+
+## se viene lo tocho
+function Get-OnlineContent {If (Test-Path -Path $HOME/MyApplets/youtube-dl ) {
+## aqui va el que si que si
+clear
+Write-Host "Si archivo"
+cd $HOME/MyApplets/youtube-dl
+$urluri = Read-Host -Prompt "Introduce la URL a descargar"
+## Invoke menu
+    Clear-Host
+    Write-Host "1. Music"
+    Write-Host "2. Another Format"
+    Write-Host "3. Exit"
+
+while(($inp = Read-Host -Prompt "Selecciona una opcion") -ne "3"){
+ 
+switch($inp){
+        1 {
+            Clear-Host
+            Write-Host "Descargando tu contenido en formato Musica. Espere porfavor..."
+                youtube-dl.exe -o $HOME/Desktop/%(title)s.%(ext)s --extract-audio --audio-format mp3 $url
+            pause;
+            break
+        }
+        2 {
+            Clear-Host
+            Write-Host "------------------------------";
+            Write-Host "2";
+            Write-Host "------------------------------";
+            pause; 
+            break
+        }
+        3 {"Exit"; break}
+        default {Write-Host -ForegroundColor red -BackgroundColor white "Invalid option. Please select another option";pause}
+        
+    }
+break
+}
+
+
+
+}
+Else {
+## Aqui va el queno queno
+clear
+Write-Host "No se ha encontrado Youtube-Dl instalado en su equipo, instalando..." -ForegroundColor Yellow
+mkdir $HOME/MyApplets/youtube-dl
+cd $HOME/MyApplets/youtube-dl
+wget https://yt-dl.org/downloads/2021.06.06/youtube-dl.exe -OutFile youtube-dl.exe
+Write-Host "Instalacion finalizada, Ejecute nuevamente el comando para usarlo" -ForegroundColor Green
+}
 
 Function Iss-Package {$essvar_url = Read-Host "Introducta la URL de descarga"
                       sleep 1
